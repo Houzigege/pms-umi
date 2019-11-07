@@ -1,11 +1,8 @@
 
 import routes from './routers';
 
-// ref: https://umijs.org/config/
 export default {
-  treeShaking: true,
   plugins: [
-    // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
       antd: true,
       'antd-mobile': true,
@@ -15,13 +12,10 @@ export default {
       dynamicImport: false,
       title: 'MyApp',
       dll: false,
+      hardSource: false,
       routes: {
         exclude: [
-          /models\//,
-          /services\//,
-          /model\.(t|j)sx?$/,
-          /service\.(t|j)sx?$/,
-          /components\//,
+          /components/,
         ],
       },
     }],
