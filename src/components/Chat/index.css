@@ -1,0 +1,95 @@
+
+.title{
+  text-align: center;
+  /*padding: 20px 20px 10px;*/
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 666;
+}
+
+.title h1{
+  line-height: 50px;
+  color: #fff;
+  font-size: 24px;
+  margin: 0;
+}
+
+.titleIcon{
+  float: left;
+  font-size: 28px;
+  position: absolute;
+  left: 10px;
+  top: 32px;
+  cursor: pointer;
+}
+
+.messagePanel{
+  overflow: auto;
+  float: left;
+  border-left: 1px solid #ccc;
+  transition: 1s;
+}
+
+.leftBox{
+  float: left;
+  margin-top: 80px;
+  transition: 1s;
+  overflow: auto;
+}
+
+.inputPanel{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 9;
+}
+
+.inputContainer {
+  width: 86%;
+}
+
+.rightContainer {
+  width: 14%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.inputBox{
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+  background: -webkit-gradient(linear,left top,right top,from(#6842d8),to(#f35279));
+  background: -webkit-linear-gradient(left,#6842d8,#f35279);
+  background: -o-linear-gradient(left,#6842d8,#f35279);
+  background: linear-gradient(90deg,#6842d8,#f35279);
+  background-color: #6842d8;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonContainer{
+  border: navajowhite;
+  background: initial;
+  margin: 0;
+  padding: 0;
+}
+
+.img {
+  width: 38px;
+}
+
+.iconBox{
+  position: initial;
+  float: left;
+  margin: 20px;
+  color: #6842d8;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 80px;
+  line-height: 92px;
+  border: 1px solid #f35279;
+  border-radius: 50%;
+}
