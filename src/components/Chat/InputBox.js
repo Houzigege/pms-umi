@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Input } from 'antd';
-import styles from './index.css';
+import styles from './index.less';
 import rightIcon from '@/assets/icon/send@3x.png';
-import { sharemoment } from '@/services/api';
+import { sendmessage } from '@/services/api';
 
 
 export default class InputBox extends Component {
@@ -43,29 +43,27 @@ export default class InputBox extends Component {
 
   adjustLayout = () => {
     let {adjustLayout} = this.props;
-    setTimeout(adjustLayout, 300);
+    setTimeout(adjustLayout, 320);
   };
 
   render() {
     let {value} = this.state;
       return (
-        <div className={styles.contentBox}>
-          <div className={styles.inputBox}>
-            <div className={styles.inputContainer}>
-              <Input placeholder="Please enter…"
-                     size="large"
-                     value={value}
-                     onChange={this.handleChange}
-                     autoFocus={!this.fIsMobile()}
-                     onPressEnter={this.handleOk}
-                     onBlur={this.adjustLayout}
-              />
-            </div>
-            <div className={styles.rightContainer}>
-              <button onClick={this.handleClick} className={styles.buttonContainer}>
-                <img className={styles.img} src={rightIcon} alt=""/>
-              </button>
-            </div>
+        <div className={styles.inputBox}>
+          <div className={styles.inputContainer}>
+            <Input placeholder="Please enter…"
+                   size="large"
+                   value={value}
+                   onChange={this.handleChange}
+                   autoFocus={!this.fIsMobile()}
+                   onPressEnter={this.handleOk}
+                   onBlur={this.adjustLayout}
+            />
+          </div>
+          <div className={styles.rightContainer}>
+            <button onClick={this.handleClick} className={styles.buttonContainer}>
+              <img className={styles.img} src={rightIcon} alt=""/>
+            </button>
           </div>
         </div>
       )

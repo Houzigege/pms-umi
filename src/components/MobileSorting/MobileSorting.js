@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Icon } from 'antd';
-import styles from './index.css';
+import styles from './index.less';
 
 export default class MobileSortingView extends Component {
   constructor(props) {
@@ -88,7 +88,6 @@ export default class MobileSortingView extends Component {
 
       if ( (R1 > _L2 && L1 < _R2) && (B1 > _T2 && T1 < _B2) ) {
         console.log('进入了……');
-        console.log('出去了……');
         this.setState({[name1]: this.state[name1].filter(_item => _item.id !== 999)});
         _flag = true;
       } else {

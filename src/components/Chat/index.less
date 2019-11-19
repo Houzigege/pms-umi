@@ -1,0 +1,143 @@
+
+.leftBox{
+  float: left;
+  margin-top: 80px;
+  transition: .6s;
+  overflow: auto;
+}
+
+.inputPanel{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 9;
+}
+
+.inputContainer {
+  width: 86%;
+}
+
+.rightContainer {
+  width: 14%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.inputBox{
+  width: 100%;
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+  background: -webkit-gradient(linear,left top,right top,from(#6842d8),to(#f35279));
+  background: -webkit-linear-gradient(left,#6842d8,#f35279);
+  background: -o-linear-gradient(left,#6842d8,#f35279);
+  background: linear-gradient(90deg,#6842d8,#f35279);
+  background-color: #6842d8;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonContainer{
+  border: navajowhite;
+  background: initial;
+  margin: 0;
+  padding: 0;
+}
+
+.img {
+  width: 38px;
+}
+
+.iconBox{
+  position: initial;
+  float: left;
+  margin: 20px;
+  color: #6842d8;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 80px;
+  line-height: 92px;
+  border: 1px solid #f35279;
+  border-radius: 50%;
+  overflow: auto;
+}
+
+.timeBox {
+  width: 100%;
+  text-align: center;
+  padding: 6px 0;
+  font-weight: 500;
+  font-size: 13px;
+  color: #666;
+  float: left;
+}
+
+.botLine {
+  padding: 10px 6px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  float: left;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  .avatarLeft {
+    width: 46px;
+    height: 46px;
+    margin-right: 6px;
+  }
+  .botSaid {
+    max-width: 80%;
+    position: relative;
+    display: inline-block;
+    margin-left: 6px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    color: #333;
+    .afterBox {
+      display: block;
+      position: absolute;
+      left: -12px;
+      border-width: 6px;
+      border-style: solid;
+      border-color: transparent #fff transparent transparent;
+    }
+  }
+}
+
+.userLine {
+  padding: 10px 6px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  float: right;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  .avatarRight {
+    width: 46px;
+    height: 46px;
+    margin-left: 6px;
+  }
+  .userSaid {
+    max-width: 80%;
+    position: relative;
+    display: inline-block;
+    margin-right: 6px;
+    background-color: #f35279;
+    padding: 10px;
+    border-radius: 6px;
+    color: #fff;
+    .afterBox {
+      display: block;
+      position: absolute;
+      right: -12px;
+      border-width: 6px;
+      border-style: solid;
+      border-color: transparent transparent transparent #f35279;
+    }
+  }
+}

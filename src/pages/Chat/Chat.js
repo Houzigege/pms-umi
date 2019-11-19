@@ -1,44 +1,40 @@
 import React, { Component } from "react";
-import styles from './index.css';
+import styles from './index.less';
+import InputBox from "@/components/chat/InputBox";
 import titleBg from '@/assets/bg_01@1x.png';
-import { openchat, sendmessage } from '@/services/api';
-import InputBox from "./InputBox";
-import DisplayMessage from "./DisplayMessage";
+import DisplayMessage from "@/components/chat/DisplayMessage";
+import { connect } from 'react-redux';
 
-
-export default class ChatView extends Component {
+@connect(({ app }) => ({ ...app }))
+class ChatPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: false,
-      messages: [{
-        id: '0000001',
-        value: '你是甲哈巴狗！',
-        timestamp: '2019-11-07 10:00:00'
-      }, {
-        id: null,
-        value: '你他妈才是甲哈巴狗呢！',
-        timestamp: '2019-11-07 11:10:00'
-      }]
+
     };
   }
 
   componentDidMount() {
     this.adjustLayout();
+
+    this.props.dispatch({type: 'app/getMessage', payload: {}});
   }
 
   componentDidUpdate() {
     this.adjustLayout();
   }
 
-  adjustLayout = () => {
-    let { visible } = this.state;
+  autoLayout = () => {
     let h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    let hInput = this.refs.inputbox.clientHeight;
+    this.refs.chatBox.setAttribute("style", `height: ${h}px`);
+  };
+
+  adjustLayout = () => {
+    let h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     let hTitle = this.refs.title.clientHeight;
-    this.refs.box.setAttribute("style", `height: ${h - (hInput + hTitle)}px; margin-top: ${hTitle}px; width: ${visible ? '50%' : '100%'}`);
+    this.refs.box.setAttribute("style", `height: ${h - hTitle - 60}px; margin-top: ${hTitle}px; width: '100%'`);
     this.refs.box.scrollTop = this.refs.box.scrollHeight;
-    setTimeout(this.props.autoLayout, 0);
+    setTimeout(this.autoLayout, 0);
   };
 
   submitUserSaid = () => {
@@ -46,9 +42,9 @@ export default class ChatView extends Component {
   };
 
   render() {
-    const {messages} = this.state;
+    const {messages} = this.props;
     return (
-      <div>
+      <div className={styles.chatPage} ref='chatBox'>
         <div className={styles.title} style={{background: `url(${titleBg}) no-repeat top/auto #6742d9`, backgroundSize: '100% 100%'}} ref='title'>
           <h1>Chat Box</h1>
         </div>
@@ -64,10 +60,9 @@ export default class ChatView extends Component {
             ))
           }
         </div>
-        <div ref='inputbox'>
-          <InputBox submitUserSaid={this.submitUserSaid} />
-        </div>
+        <InputBox submitUserSaid={this.submitUserSaid} />
       </div>
     )
   }
 }
+export default ChatPage;

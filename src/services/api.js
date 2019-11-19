@@ -10,7 +10,7 @@ export const a = (data) => {
   })
 };
 
-export const b = (data) => {
+export const sendMessage = (data) => {
   return request({
     url: '/api/b',
     method: 'post',
@@ -18,10 +18,10 @@ export const b = (data) => {
   })
 };
 
-export const c = (data) => {
+export const getMessage = (data) => {
   return request({
     url: '/api/c',
-    method: 'post',
+    method: 'get',
     params: data
   })
 };

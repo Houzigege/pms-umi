@@ -17,7 +17,7 @@ const routes = [
       {
         path: "/chat",
         name: 'Chat',
-        component: './Chat/ChatPage.js',
+        component: './Chat/Chat.js',
       }
     ]
   }
