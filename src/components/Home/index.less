@@ -1,11 +1,30 @@
 
 .warp{
-  margin: 30px auto;
+  margin: 100px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   .box {
-    overflow: hidden;
+    border: 1px solid #e5e5e5;
+    box-sizing: initial;
     .imgBg {
+      position: relative;
       float: left;
       box-sizing: border-box;
+      width: 100px;
+      height: 100px;
+      .icon {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: #ED1A35;
+      }
+      &:hover {
+        .icon {
+          display: inline-block;
+        }
+      }
     }
   }
   .iconBox {

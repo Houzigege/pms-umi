@@ -1,0 +1,59 @@
+
+.contentBox{
+  overflow: hidden;
+  margin: 100px auto;
+  padding: 30px 0 0 30px;
+  background: #d8b693;
+}
+
+.content{
+  position: relative;
+}
+
+.box{
+  position: relative;
+  float: left;
+  border: 1px solid #000;
+  border-top: none;
+  border-right: none;
+  width: 30px;
+  height: 30px;
+  box-sizing: border-box;
+ }
+
+.footerBox{
+  position: relative;
+  float: left;
+  width: 30px;
+  height: 30px;
+  border: none;
+  box-sizing: border-box;
+}
+
+.lastBox{
+  position: relative;
+  float: left;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-left: 1px solid #000;
+  box-sizing: border-box;
+}
+
+.icon{
+  position: relative;
+  top: -4px;
+  left: -4px;
+  width: 7px;
+  height: 7px;
+  background: #5f411d;
+}
+
+.pieces{
+  position: absolute;
+  top: -14px;
+  left: -14px;
+  width: 27px;
+  height: 27px;
+  z-index: 999;
+}

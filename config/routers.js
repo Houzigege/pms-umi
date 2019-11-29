@@ -18,6 +18,11 @@ const routes = [
         path: "/chat",
         name: 'Chat',
         component: './Chat/Chat.js',
+      },
+      {
+        path: "/flag",
+        name: 'Flag',
+        component: './Flag/Flag.js',
       }
     ]
   }
