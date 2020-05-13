@@ -34,5 +34,7 @@ export default {
   },
   proxy: {
 
-  }
+  },
+  // base: './',
+  // publicPath: './',
 }

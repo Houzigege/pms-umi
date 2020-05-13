@@ -14,6 +14,8 @@ let data1 = {
 
 let data2 = {"code":200,"message":"SUCCESS","data": null};
 
+let data3 = {"code":200,"message":"SUCCESS","data": ['Model/Title', 'Model/Sct', 'Model/Input']};
+
 export default {
   'GET /api/a': (req, res) => {
     res.send(data2);
@@ -23,6 +25,9 @@ export default {
   },
   'GET /api/c': (req, res) => {
     res.send(data1);
+  },
+  'GET /api/component': (req, res) => {
+    res.send(data3);
   },
 };
 

@@ -1,0 +1,340 @@
+
+.warp {
+  height: 100vh;
+  overflow: hidden;
+  transition: 1s;
+  position: relative;
+  .settingBox {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 99;
+    .setting {
+      font-size: 28px;
+      color: rgba(255,255,255,.8);
+      &:hover {
+        color: rgba(255,255,255,1);
+      }
+    }
+  }
+  .settingPage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 990;
+    width: 100vw;
+    height: 100vh;
+    .bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 965;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, .6);
+    }
+    .boxContent {
+      width: 0;
+      height: 100vh;
+      padding: 20px;
+      overflow: hidden;
+      transition: .4s;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 998;
+      background: linear-gradient(90deg, rgba(180, 210, 200, 1) 0%, rgba(195, 135, 135, 1) 100%);
+      .buttonContent {
+        width: 100%;
+        height: 12vh;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .cancel {
+          width: 100px;
+          height: 38px;
+          text-align: center;
+          line-height: 38px;
+          background:linear-gradient(135deg,rgba(255,250,222,1) 0%,rgba(255,255,255,1) 100%);
+          color: #333;
+          font-size: 14px;
+          font-weight: 500;
+          border-radius: 6px;
+          cursor: pointer;
+          box-shadow:0 2px 8px 0 rgba(0,0,0,0.06);
+        }
+        .confirm {
+          margin-left: 20px;
+          width: 100px;
+          height: 38px;
+          text-align: center;
+          line-height: 38px;
+          background:linear-gradient(135deg,rgba(90,80,222,1) 0%,rgba(125,220,240,1) 100%);
+          color: #fff;
+          font-size: 14px;
+          font-weight: 500;
+          border-radius: 6px;
+          cursor: pointer;
+          box-shadow:0 2px 8px 0 rgba(0,0,0,0.06);
+        }
+      }
+      .isShowBox {
+        height: 88vh;
+        overflow: auto;
+        padding-right: 2px;
+        .msgBox {
+          padding-bottom: 10px;
+          margin-bottom: 20px;
+          border-bottom: 1px solid #e5e5e5;
+          position: relative;
+          .delete {
+            position: absolute;
+            font-size: 22px;
+            color: rgba(90,80,222,.7);
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            &:hover {
+              color: rgba(90,80,222,1);
+            }
+          }
+          .item {
+            margin-bottom: 10px;
+            label {
+              color: #5a50de;
+              font-size: 16px;
+              line-height: 28px;
+              margin-right: 20px;
+            }
+          }
+        }
+        .plusBox {
+          border: 1px solid #FFF;
+          height: 100px;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #FFF;
+          cursor: pointer;
+          &:hover {
+            border: 1px solid rgba(125,220,240,1);
+            color: rgba(125,220,240,1);
+          }
+          .plus {
+            font-size: 38px;
+          }
+        }
+      }
+    }
+  }
+  .icon {
+    font-size: 38px;
+    color: rgba(90,80,222,1);
+  }
+  .left {
+    z-index: 99;
+    height: 100px;
+    width: 60px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,.1);
+    opacity: .3;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .right {
+    z-index: 99;
+    height: 100px;
+    width: 60px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,.1);
+    opacity: .3;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #FFF;
+    width: 100%;
+    margin: 80px auto 0;
+  }
+
+  .tabWarp {
+    float: left;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background:linear-gradient(180deg,rgba(180,210,200,.8) 0%,rgba(195,135,135,.8) 100%);
+  }
+  .textBox {
+    width: 80%;
+    margin: 38px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .text {
+      padding: 10px 20px;
+      text-align: center;
+      background:linear-gradient(135deg,rgba(235,120,155,.8) 0%,rgba(245,200,108,.8) 100%);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 10px;
+      margin: 10px;
+      box-shadow:0 2px 12px 0 rgba(0,0,0,0.06);
+    }
+  }
+  .contentBox {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    bottom: 120px;
+    left: 0;
+    right: 0;
+  }
+  .test {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    //color: rgb(55, 120, 130);
+    //color: rgb(90,90,200);
+    //color: rgb(125, 220, 240);
+    //color: rgb(235,120,155);
+    //color: rgb(245,200,108);
+    font-size: 28px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .roundBox {
+    transition: 6s;
+    transform: rotateZ(0deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background:linear-gradient(135deg,rgba(90,80,222,.8) 0%,rgba(125,220,240,.8) 100%);
+    .roundContent {
+      width: 190px;
+      height: 190px;
+      border-radius: 100px;
+      background-color: rgba(255,255,255,.8);
+    }
+    .dio {
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      position: absolute;
+      background: linear-gradient(0deg, rgba(90, 80, 222, 1) 0%, rgba(125, 220, 240, 1) 100%);
+    }
+    .dio1 {
+      top: 20px;
+      left: 20px;
+    }
+    .dio2 {
+      top: 20px;
+      right: 20px;
+    }
+    .dio3 {
+      bottom: 20px;
+      left: 20px;
+    }
+    .dio4 {
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+  .roundBox2 {
+    transition: 7s;
+    transform: rotateZ(0deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 160px;
+    height: 160px;
+    border-radius: 80px;
+    background:linear-gradient(135deg,rgba(235,120,155,.8) 0%,rgba(245,200,108,.8) 100%);
+    .roundContent {
+      width: 150px;
+      height: 150px;
+      border-radius: 80px;
+      background-color: rgba(255,255,255,.8);
+    }
+    .dio {
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      position: absolute;
+      background: linear-gradient(0deg, rgba(235,120,155,1) 0%, rgba(245,200,108,1) 100%);
+    }
+    .dio1 {
+      top: -7.5px;
+      left: 75px;
+    }
+    .dio2 {
+      bottom: 40px;
+      right: 0;
+    }
+    .dio3 {
+      bottom: 40px;
+      left: 0;
+    }
+  }
+  .buttonBox {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .button {
+      width: 180px;
+      height: 58px;
+      text-align: center;
+      line-height: 58px;
+      background:linear-gradient(135deg,rgba(90,80,222,1) 0%,rgba(125,220,240,1) 100%);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow:0 2px 12px 0 rgba(0,0,0,0.06);
+    }
+  }
+}
+

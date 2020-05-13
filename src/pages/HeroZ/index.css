@@ -1,0 +1,17 @@
+
+.contentBox{
+  overflow: hidden;
+  margin: 100px auto;
+  background: #577963;
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.hero {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  will-change: transform;
+  /*transform: rotateY(180deg);*/
+}

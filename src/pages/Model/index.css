@@ -1,0 +1,74 @@
+
+.contentBox{
+  /*background-color: #ebebeb;*/
+  height: 100vh;
+  overflow: hidden;
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  /*text-align: center;*/
+  /*line-height: 100px;*/
+  /*color: #fff;*/
+  /*font-size: 20px;*/
+  /*font-weight: 600;*/
+}
+iframe {
+  margin: 0;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+}
+
+.canvas {
+  padding-top: 10px;
+  background-color: #888;
+}
+
+.img {
+  width: 100%;
+}
+
+.titleBox {
+  background-color: #f35279;
+  width: 80%;
+  height: 100px;
+}
+
+.sctBox {
+  background-color: #6842d8;
+  width: 80%;
+  height: 100px;
+}
+
+.inputBox {
+  background-color: #5f411d;
+  width: 80%;
+  height: 100px;
+}
+
+.listBox {
+  overflow: hidden;
+  position: relative;
+}
+
+.listTitleBox {
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.title {
+  background-color: #f35279;
+  height: 46px;
+  line-height: 46px;
+  margin: 0;
+}
+
+.childName {
+  background-color: #5f411d;
+  height: 38px;
+  font-size: 14px;
+  line-height: 38px;
+  font-weight: normal;
+}

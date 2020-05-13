@@ -77,10 +77,10 @@ export default class ChatPage extends Component {
       num: 0,
     };
     this.H.map(item => {
-      this.handleIsWin(item, this.H);
+      this.handleIsWin(item, this.H, 1);
     });
     this.B.map(item => {
-      this.handleIsWin(item, this.B);
+      this.handleIsWin(item, this.B, 2);
     });
 
     console.log('this.AIArr', this.AIArr);
@@ -114,7 +114,7 @@ export default class ChatPage extends Component {
     this.handleClick(ItemAi, true);
   };
 
-  handleIsWin = (item, partyArr) => {
+  handleIsWin = (item, partyArr, str) => {
     let dataArr = [];
     let flag = false;
     if(partyArr) {
@@ -148,13 +148,13 @@ export default class ChatPage extends Component {
     let type = false;
     for (let i = 0; i < arr.length; i ++ ) {
       if(arr[i] == x) {
-        type = this.handleToCalculate(arr[i].sort((a, b) => a[0] - b[0]), 'x', flag);
+        type = this.handleToCalculate(arr[i].sort((a, b) => a[0] - b[0]), 'x', flag, str);
       } else if(arr[i] == y)  {
-        type = this.handleToCalculate(arr[i].sort((a, b) => a[1] - b[1]), 'y', flag);
+        type = this.handleToCalculate(arr[i].sort((a, b) => a[1] - b[1]), 'y', flag, str);
       } else if(arr[i] == leftX)  {
-        type = this.handleToCalculate(arr[i].sort((a, b) => a[0] - b[0]), 'leftX', flag);
+        type = this.handleToCalculate(arr[i].sort((a, b) => a[0] - b[0]), 'leftX', flag, str);
       } else {
-        type = this.handleToCalculate(arr[i].sort((a, b) => a[0] - b[0]), 'rightX', flag);
+        type = this.handleToCalculate(arr[i].sort((a, b) => a[0] - b[0]), 'rightX', flag, str);
       }
       if(type) break;
     }
@@ -164,7 +164,7 @@ export default class ChatPage extends Component {
     }
   };
 
-  handleToCalculate = (partyArr, name, flag) => {
+  handleToCalculate = (partyArr, name, flag, str) => {
     let {data} = this.state;
     let isCalculate = (item, num) => {
       let _item = [];
@@ -192,41 +192,63 @@ export default class ChatPage extends Component {
         if(party.join('-') == _item.join('-')) {
           type = true;
         }
-        if(party.join('-') == _itemF.join('-')) {
+        // if(party.join('-') == _itemF.join('-')) {
+        //   num.number ++;
+        // }
+        // if(num.index >= 2 && !type && party.join('-') == _itemL.join('-')) {
+        //   num.number = str == 2 ? 90 : 80;
+        // }
+      });
+      let itemType = null;
+      let left = false;
+      data.map(_data => {
+        let idArr = _data.id.split('-');
+        if(idArr.join('-') == _itemF.join('-') && !_data.type) {
+          left = true;
           num.number ++;
         }
-        if(num.index >= 2 && party.join('-') == _itemL.join('-')) {
-          num.number ++;
+        if(idArr.join('-') == _item.join('-')) {
+          itemType = _data.type;
         }
       });
       data.map(_data => {
         let idArr = _data.id.split('-');
-        if(idArr.join('-') == _itemF.join('-') && !_data.type) {
-          num.number ++;
+        if(num._index >= 3 && itemType == str && idArr.join('-') == _itemL.join('-') && !_data.type && left) {
+          num.number = str == 2 ? 90 : 80;
         }
-        if(num.index >= 2 && idArr.join('-') == _itemL.join('-') && !_data.type) {
-          num.number ++;
+        if(num.index >= 3 && itemType == str && idArr.join('-') == _itemL.join('-') && !_data.type && left) {
+          num.number = str == 2 ? 90 : 80;
         }
       });
       if(type) {
         !num.type && num.index ++;
         num.number ++;
+        num._index ++;
         isCalculate(_item, num);
-      } else if(!num.type) {
+      } else if(!num.type && !itemType) {
         num.type = true;
         isCalculate(_item, num);
       }
+      let number = num.number;
+      if (num._index >= 4) {
+        number = str == 2 ? 100 : 95;
+      }
+      if (num.index >= 4) {
+        number = str == 2 ? 100 : 95;
+      }
       return {
         index: num.index,
-        type: num.index === 5,
-        num: num.index === 4 ? 100  : num.number
+        _index: num._index,
+        type: num.index >= 5,
+        num: number
       };
     };
     for (let i = 0; i < partyArr.length; i ++ ) {
       let num = {
         index : 1,
         number: 1,
-        type: false
+        type: false,
+        _index: 1
       };
       let type = isCalculate(partyArr[i], num);
       // console.log('type', partyArr[i], type);
@@ -247,7 +269,7 @@ export default class ChatPage extends Component {
             }
             if(item.id == locationSrc2 && !item.type) {
               let _data = {
-                num: type.num,
+                num: (type._index !== type.index && type._index >= 3) ? type.num + 1 : type.num,
                 location: locationSrc2
               };
               _type = true;

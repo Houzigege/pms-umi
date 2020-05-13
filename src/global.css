@@ -4,4 +4,15 @@ html, body, #root {
 
 body {
   margin: 0;
+  overflow: hidden;
+  /*overflow: auto;*/
+}
+
+body * {
+  box-sizing: initial;
+}
+
+.ant-radio-inner::after{
+  top: 4px !important;
+  left: 4px !important;
 }

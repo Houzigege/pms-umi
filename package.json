@@ -11,8 +11,11 @@
     "antd": "^3.19.5",
     "axios": "^0.18.0",
     "dva": "^2.6.0-beta.6",
+    "idb": "^5.0.1",
+    "jsencrypt": "https://github.com/zhangwen9229/jsencrypt.git",
+    "pdfjs-dist": "^2.2.228",
+    "rc-texty": "^0.2.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {

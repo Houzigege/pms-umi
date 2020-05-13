@@ -25,3 +25,11 @@ export const getMessage = (data) => {
     params: data
   })
 };
+
+export const getComponent = (data) => {
+  return request({
+    url: '/api/component',
+    method: 'get',
+    params: data
+  })
+};
