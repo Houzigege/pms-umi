@@ -9,11 +9,11 @@ const routes = [
         name: 'Home',
         component: './TestHome/Home.js',
       },
-      // {
-      //   path: "/mobile",
-      //   name: 'Mobile',
-      //   component: './MobileSorting/MobileSorting.js',
-      // },
+      {
+        path: "/mobile",
+        name: 'Mobile',
+        component: './MobileSorting/MobileSorting.js',
+      },
       // {
       //   path: "/chat",
       //   name: 'Chat',
@@ -34,11 +34,11 @@ const routes = [
       //   name: 'Model',
       //   component: './Model/Model.js',
       // },
-      // {
-      //   path: "/lucky",
-      //   name: 'Lucky',
-      //   component: './LuckyDraw/Home.js',
-      // }
+      {
+        path: "/lucky",
+        name: 'Lucky',
+        component: './LuckyDraw/Home.js',
+      }
     ]
   }
 ];

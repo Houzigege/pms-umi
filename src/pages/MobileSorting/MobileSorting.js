@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styles from './index.less';
-import MobileSortingView from "../../components/MobileSorting/MobileSorting";
+import MobileSortingView from "../../components/MobileSorting/MobileSorting2";
 
 export default class MobileSorting extends Component {
 
